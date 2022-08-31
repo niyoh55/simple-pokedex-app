@@ -63,7 +63,7 @@ function App() {
 
   return (
     <div className="h-full min-h-screen w-full bg-white py-2 px-5 flex flex-col justify-center items-center">
-      <div className="grid grid-cols-5 gap-y-5 gap-x-5 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5  gap-y-5 gap-x-5 w-full">
         {pokemons.map((pokemon, index) => (
           <div
             key={pokemon.id}
@@ -78,6 +78,7 @@ function App() {
                 }
                  duration-1000`}
                 src={pokemon.sprites.other.dream_world.front_default}
+                alt={`A picture of ${pokemon.name} from Pokemon.`}
               />
             </div>
             <span className="text-2xl font-semibold pt-2">{pokemon.name}</span>
