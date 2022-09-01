@@ -1,11 +1,5 @@
 # simple-pokedex-app
 
-This is a regular paragraph.
-
-<table>
-    <tr>
-        <td>Foo</td>
-    </tr>
-</table>
-
-This is another regular paragraph.
+<h1>
+Simple Pokedex App 
+</h1>
