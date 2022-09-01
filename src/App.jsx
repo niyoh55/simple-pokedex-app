@@ -12,6 +12,51 @@ function App() {
     return splitName.join("");
   };
 
+  const checkPokemonType = (type) => {
+    console.log(type);
+    switch (type) {
+      case "water":
+        return "bg-water";
+      case "electric":
+        return "bg-electric";
+      case "grass":
+        return "bg-grass";
+      case "ice":
+        return "bg-ice";
+      case "fighting":
+        return "bg-fighting";
+      case "poison":
+        return "bg-poison";
+      case "ground":
+        return "bg-ground";
+      case "flying":
+        return "bg-flying";
+      case "psychic":
+        return "bg-psychic";
+      case "bug":
+        return "bg-bug";
+      case "rock":
+        return "bg-rock";
+      case "ghost":
+        return "bg-ghost";
+      case "dragon":
+        return "bg-dragon";
+      case "dark":
+        return "bg-dark";
+      case "steel":
+        return "bg-steel";
+      case "fairy":
+        return "bg-fairy";
+      case "normal":
+        return "bg-normal";
+      case "fire":
+        console.log("nag trigger fire");
+        return "bg-fire";
+      default:
+        return "bg-normal";
+    }
+  };
+
   const getPokemonDetail = async (pokemonName) => {
     try {
       const res = await axios.get(
@@ -19,7 +64,11 @@ function App() {
       );
       setPokemons((state) => [
         ...state,
-        { ...res.data, name: capitalizeFirstLetter(res.data.name) },
+        {
+          ...res.data,
+          name: capitalizeFirstLetter(res.data.name),
+          bg_color: checkPokemonType(res.data.types[0].type.name),
+        },
       ]);
     } catch (e) {
       console.log(e);
@@ -69,7 +118,9 @@ function App() {
             key={pokemon.id}
             className="flex flex-col justify-between items-center bg-slate-200 shadow-2xl border-2 border-gray-600 px-2 py-2 rounded-2xl aspect-square hover:scale-105 active:scale-95 transition-all duration-200 group"
           >
-            <div className="bg-pink-300 w-full h-full flex items-center justify-center">
+            <div
+              className={`${pokemon.bg_color} w-full h-full flex items-center justify-center`}
+            >
               <img
                 className={`w-auto h-full aspect-square max-w-full max-h-full scale-90 ${
                   Number(index) % 2 == 0
