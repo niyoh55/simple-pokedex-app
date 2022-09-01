@@ -92,7 +92,9 @@ function App() {
       <button
         onClick={loadMorePokemons}
         disabled={isLoading}
-        className="bg-green-200 px-10 py-2 text-3xl mt-20 rounded-lg w-full"
+        className={`${
+          isLoading ? "bg-gray-400" : "bg-green-200"
+        } px-10 py-2 text-3xl mt-20 rounded-lg w-full`}
       >
         <span>{isLoading ? "Loading..." : "Load More"}</span>
       </button>
