@@ -1,10 +1,9 @@
 # Simple Pokedex App 
+ Browse the list of all currently existing Pokemons.
 
 # [Link](https://simple-pokedex-app-by-niyoh.vercel.app/) to deployed app.
 
-## Browse the list of all currently existing Pokemons.
-
-### Technology used:
+### Technologies used:
 - Vite
 - React
 - Tailwind CSS
