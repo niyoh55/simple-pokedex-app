@@ -1,5 +1,7 @@
 # Simple Pokedex App 
 
+# [Link](https://simple-pokedex-app-by-niyoh.vercel.app/) to deployed app.
+
 ## Browse the list of all currently existing Pokemons.
 
 ### Technology used:
