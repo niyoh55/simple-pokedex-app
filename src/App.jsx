@@ -1,60 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+import { checkPokemonType } from "../src/Utils/PokemonColors";
 function App() {
   const [pokemons, setPokemons] = useState([]);
   const [offset, setOffset] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const capitalizeFirstLetter = (name) => {
     const splitName = name.split("");
     splitName[0] = splitName[0].toUpperCase();
     return splitName.join("");
-  };
-
-  const checkPokemonType = (type) => {
-    console.log(type);
-    switch (type) {
-      case "water":
-        return "bg-water";
-      case "electric":
-        return "bg-electric";
-      case "grass":
-        return "bg-grass";
-      case "ice":
-        return "bg-ice";
-      case "fighting":
-        return "bg-fighting";
-      case "poison":
-        return "bg-poison";
-      case "ground":
-        return "bg-ground";
-      case "flying":
-        return "bg-flying";
-      case "psychic":
-        return "bg-psychic";
-      case "bug":
-        return "bg-bug";
-      case "rock":
-        return "bg-rock";
-      case "ghost":
-        return "bg-ghost";
-      case "dragon":
-        return "bg-dragon";
-      case "dark":
-        return "bg-dark";
-      case "steel":
-        return "bg-steel";
-      case "fairy":
-        return "bg-fairy";
-      case "normal":
-        return "bg-normal";
-      case "fire":
-        console.log("nag trigger fire");
-        return "bg-fire";
-      default:
-        return "bg-normal";
-    }
   };
 
   const getPokemonDetail = async (pokemonName) => {
@@ -89,7 +46,7 @@ function App() {
 
   const loadMorePokemons = async () => {
     setOffset((state) => state + 20);
-    console.log(offset);
+
     setIsLoading(true);
     try {
       const res = await axios.get(
@@ -106,6 +63,10 @@ function App() {
     }
   };
 
+  const goToPokemonDetails = (pokemon) => {
+    navigate(`/pokemon-detail/${pokemon.name}`, { state: { ...pokemon } });
+  };
+
   useEffect(() => {
     getPokemons();
   }, []);
@@ -117,9 +78,10 @@ function App() {
           <div
             key={pokemon.id}
             className="flex flex-col justify-between items-center bg-slate-200 shadow-2xl border-2 border-gray-600 px-2 py-2 rounded-2xl aspect-square hover:scale-105 active:scale-95 transition-all duration-200 group"
+            onClick={() => goToPokemonDetails(pokemon)}
           >
             <div
-              className={`${pokemon.bg_color} w-full h-full flex items-center justify-center`}
+              className={`${pokemon.bg_color} w-full h-full flex items-center justify-center rounded-2xl`}
             >
               <img
                 className={`w-auto h-full aspect-square max-w-full max-h-full scale-90 ${
