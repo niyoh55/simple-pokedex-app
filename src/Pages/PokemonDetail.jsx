@@ -36,7 +36,8 @@ const PokemonDetail = () => {
     if (location.state) {
       setPokemon(location.state);
     } else {
-      getPokemonDetail(params.pokemon_name);
+      navigate("/");
+      //getPokemonDetail(params.pokemon_name);
     }
   }, []);
 
