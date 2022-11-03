@@ -72,13 +72,13 @@ function App() {
   }, []);
 
   return (
-    <div className="h-full min-h-screen w-full bg-white py-2 px-5 flex flex-col justify-center items-center font-Silkscreen">
+    <div className="h-full min-h-screen w-full bg-white py-2 px-5 flex flex-col justify-center items-center">
       <div className="flex-1 h-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5  gap-y-5 gap-x-5 w-full">
           {pokemons.map((pokemon, index) => (
             <div
               key={pokemon.id}
-              className="flex flex-col justify-between items-center bg-slate-200 shadow-2xl border-2 border-gray-600 px-2 py-2 rounded-2xl aspect-square hover:scale-105 active:scale-95 transition-all duration-200 group"
+              className="flex flex-col justify-between items-center bg-slate-200 shadow-2xl border-2 border-gray-600 px-2 py-2 rounded-2xl aspect-square hover:scale-105 active:scale-95 transition-all duration-200 group font-Silkscreen"
               onClick={() => goToPokemonDetails(pokemon)}
             >
               <div
@@ -111,7 +111,7 @@ function App() {
         disabled={isLoading}
         className={`${
           isLoading ? "bg-gray-400" : "bg-green-200"
-        } px-10 py-2 text-3xl mt-20 rounded-lg w-full flex-none`}
+        } px-10 py-2 text-3xl mt-20 rounded-lg w-full flex-none font-Silkscreen`}
       >
         <span>{isLoading ? "Loading..." : "Load More"}</span>
       </button>
