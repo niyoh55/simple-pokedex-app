@@ -17,29 +17,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route
+          path="/pokemon-detail/:pokemon_name"
+          element={<PokemonDetail />}
+        />
         <Route path="/about" element={<About />} />
         <Route path="/counter" element={<Counter />} />
-        {/* <Route path="/try" element={<Try />} /> */}
+
+        {/* <Route path="/try" element={<Try />} /> 
         <Route path="/users/:user_id" element={<User />} />
-        <Route path="/more">
-          <Route
-            index
-            path=""
-            element={
-              <div>
-                <h1>MORE</h1>
-              </div>
-            }
-          />
-          <Route
-            path="more"
-            element={
-              <div>
-                <h1>MORE MORE</h1>
-              </div>
-            }
-          />
-        </Route>
+        */}
       </Routes>
     </BrowserRouter>
   </Provider>
