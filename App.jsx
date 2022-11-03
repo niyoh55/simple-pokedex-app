@@ -72,7 +72,7 @@ function App() {
   }, []);
 
   return (
-    <div className="h-full min-h-screen w-full bg-white py-2 px-5 flex flex-col justify-center items-center font-Silkscreen">
+    <div className="h-full min-h-screen w-full bg-white py-2 px-5 flex flex-col justify-center items-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5  gap-y-5 gap-x-5 w-full">
         {pokemons.map((pokemon, index) => (
           <div
