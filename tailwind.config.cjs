@@ -23,7 +23,10 @@ module.exports = {
         normal: "#A8A77A",
         fire: "#EE8130",
       },
+      fontFamily: {
+        Silkscreen: ["Silkscreen"],
+      },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

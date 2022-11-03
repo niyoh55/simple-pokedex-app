@@ -52,7 +52,7 @@ const PokemonDetail = () => {
       }`}
     >
       {pokemon ? (
-        <div className="h-full flex flex-col">
+        <div className="h-full flex flex-col font-Silkscreen">
           <div
             className={`${pokemon.bg_color} w-full h-full flex flex-col flex-1 items-center justify-center`}
           >
